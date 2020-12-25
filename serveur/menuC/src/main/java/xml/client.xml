@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<clientele
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://l3-miage/projetIntegrateur'
+    xsi:schemaLocation='http://l3-miage/projetIntegrateur schemaClient.xsd'>
+    
+    <client idClient = "1">
+        <nomClient>Dufourt</nomClient>
+        <prenomClient>Julien</prenomClient>
+        <photoClient>../photos/clients/DugourtJ.jpg</photoClient>
+        <emailClient>Julien.Dufourt@gmail.com</emailClient>
+        <telClient>0678652438</telClient>
+        <noAdrClient>9bis</noAdrClient>
+        <rueAdrClient>Chemin de la foret</rueAdrClient>
+        <cpAdrClient>69546</cpAdrClient>
+        <villeAdrClient>Tizy-Les-Bourgs</villeAdrClient>
+        <listeCommandes>
+            <commande idCommande = "1">
+                <dateCommande>2020-05-11</dateCommande>
+                <prixCommande>6.50</prixCommande>
+                <noAdrLivraison>9bis</noAdrLivraison>
+                <rueAdrLivraison>Chemin de la foret</rueAdrLivraison>
+                <cpAdrLivraison>69546</cpAdrLivraison>
+                <villeAdrLivraison>Tizy-Les-Bourgs</villeAdrLivraison>
+                <listePlats>
+                    <plat nomPlat = "limonade">
+                        <typePlat>boisson</typePlat>
+                        <prix>2.20</prix>
+                        <photo>../photo/boissons/limonade.png</photo>
+                        <listeIngredient>
+                            <ingredient>eau</ingredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>additif</ingredient>
+                            <ingredient>conservateur</ingredient>
+                            <ingredient>citron</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "salade au bleu">
+                        <typePlat>entrée</typePlat>
+                        <prix>1.50</prix>
+                        <photo>../photo/entrees/saladeBleu.png</photo>
+                        <listeIngredient>
+                            <ingredient>salade</ingredient>
+                            <ingredient>bleu</ingredient>
+                            <ingredient>tomate</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "pizza aux saumon">
+                        <typePlat>plat principal</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/plats/pizzaSaumon.png</photo>
+                        <listeIngredient>
+                            <ingredient>gruyère</ingredient>
+                            <ingredient>saumon</ingredient>
+                            <ingredient>tomate</ingredient>
+                            <ingredient>huile d'olive</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "gâteau au chocolat">
+                        <typePlat>dessert</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/desserts/gateauChocolat.jpg</photo>
+                        <listeIngredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>farine</ingredient>
+                            <ingredient>oeufs</ingredient>
+                            <ingredient>chocolat</ingredient>
+                        </listeIngredient>
+                    </plat>
+                </listePlats>
+            </commande>
+            <commande idCommande = "2">
+                <dateCommande>2020-05-11</dateCommande>
+                <prixCommande>6.50</prixCommande>
+                <noAdrLivraison>9bis</noAdrLivraison>
+                <rueAdrLivraison>Chemin de la foret</rueAdrLivraison>
+                <cpAdrLivraison>69546</cpAdrLivraison>
+                <villeAdrLivraison>Tizy-Les-Bourgs</villeAdrLivraison>
+                <listePlats>
+                    <plat nomPlat = "limonade">
+                        <typePlat>boisson</typePlat>
+                        <prix>2.20</prix>
+                        <photo>../photo/boissons/limonade.png</photo>
+                        <listeIngredient>
+                            <ingredient>eau</ingredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>additif</ingredient>
+                            <ingredient>conservateur</ingredient>
+                            <ingredient>citron</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "salade au bleu">
+                        <typePlat>entrée</typePlat>
+                        <prix>1.50</prix>
+                        <photo>../photo/entrees/saladeBleu.png</photo>
+                        <listeIngredient>
+                            <ingredient>salade</ingredient>
+                            <ingredient>bleu</ingredient>
+                            <ingredient>tomate</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "pizza aux saumon">
+                        <typePlat>plat principal</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/plats/pizzaSaumon.png</photo>
+                        <listeIngredient>
+                            <ingredient>gruyère</ingredient>
+                            <ingredient>saumon</ingredient>
+                            <ingredient>tomate</ingredient>
+                            <ingredient>huile d'olive</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "gâteau au chocolat">
+                        <typePlat>dessert</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/desserts/gateauChocolat.jpg</photo>
+                        <listeIngredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>farine</ingredient>
+                            <ingredient>oeufs</ingredient>
+                            <ingredient>chocolat</ingredient>
+                        </listeIngredient>
+                    </plat>
+                </listePlats>
+            </commande>
+        </listeCommandes>     
+    </client>
+    <client idClient = "2">
+        <nomClient>Dufourt</nomClient>
+        <prenomClient>Julien</prenomClient>
+        <photoClient>../photos/clients/DugourtJ.jpg</photoClient>
+        <emailClient>Julien.Dufourt@gmail.com</emailClient>
+        <telClient>0678652435</telClient>
+        <noAdrClient>9bis</noAdrClient>
+        <rueAdrClient>Chemin de la foret</rueAdrClient>
+        <cpAdrClient>69546</cpAdrClient>
+        <villeAdrClient>Tizy-Les-Bourgs</villeAdrClient>
+        <listeCommandes>
+            <commande idCommande = "1">
+                <dateCommande>2020-05-11</dateCommande>
+                <prixCommande>6.50</prixCommande>
+                <noAdrLivraison>9bis</noAdrLivraison>
+                <rueAdrLivraison>Chemin de la foret</rueAdrLivraison>
+                <cpAdrLivraison>69546</cpAdrLivraison>
+                <villeAdrLivraison>Tizy-Les-Bourgs</villeAdrLivraison>
+                <listePlats>
+                    <plat nomPlat = "limonade">
+                        <typePlat>boisson</typePlat>
+                        <prix>2.20</prix>
+                        <photo>../photo/boissons/limonade.png</photo>
+                        <listeIngredient>
+                            <ingredient>eau</ingredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>additif</ingredient>
+                            <ingredient>conservateur</ingredient>
+                            <ingredient>citron</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "salade au bleu">
+                        <typePlat>entrée</typePlat>
+                        <prix>1.50</prix>
+                        <photo>../photo/entrees/saladeBleu.png</photo>
+                        <listeIngredient>
+                            <ingredient>salade</ingredient>
+                            <ingredient>bleu</ingredient>
+                            <ingredient>tomate</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "pizza aux saumon">
+                        <typePlat>plat principal</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/plats/pizzaSaumon.png</photo>
+                        <listeIngredient>
+                            <ingredient>gruyère</ingredient>
+                            <ingredient>saumon</ingredient>
+                            <ingredient>tomate</ingredient>
+                            <ingredient>huile d'olive</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "gâteau au chocolat">
+                        <typePlat>dessert</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/desserts/gateauChocolat.jpg</photo>
+                        <listeIngredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>farine</ingredient>
+                            <ingredient>oeufs</ingredient>
+                            <ingredient>chocolat</ingredient>
+                        </listeIngredient>
+                    </plat>
+                </listePlats>
+            </commande>
+            <commande idCommande = "2">
+                <dateCommande>2020-05-11</dateCommande>
+                <prixCommande>6.50</prixCommande>
+                <noAdrLivraison>9bis</noAdrLivraison>
+                <rueAdrLivraison>Chemin de la foret</rueAdrLivraison>
+                <cpAdrLivraison>69546</cpAdrLivraison>
+                <villeAdrLivraison>Tizy-Les-Bourgs</villeAdrLivraison>
+                <listePlats>
+                    <plat nomPlat = "limonade">
+                        <typePlat>boisson</typePlat>
+                        <prix>2.20</prix>
+                        <photo>../photo/boissons/limonade.png</photo>
+                        <listeIngredient>
+                            <ingredient>eau</ingredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>additif</ingredient>
+                            <ingredient>conservateur</ingredient>
+                            <ingredient>citron</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "salade au bleu">
+                        <typePlat>entrée</typePlat>
+                        <prix>1.50</prix>
+                        <photo>../photo/entrees/saladeBleu.png</photo>
+                        <listeIngredient>
+                            <ingredient>salade</ingredient>
+                            <ingredient>bleu</ingredient>
+                            <ingredient>tomate</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "pizza aux saumon">
+                        <typePlat>plat principal</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/plats/pizzaSaumon.png</photo>
+                        <listeIngredient>
+                            <ingredient>gruyère</ingredient>
+                            <ingredient>saumon</ingredient>
+                            <ingredient>tomate</ingredient>
+                            <ingredient>huile d'olive</ingredient>
+                        </listeIngredient>
+                    </plat>
+                    <plat nomPlat = "gâteau au chocolat">
+                        <typePlat>dessert</typePlat>
+                        <prix>3.20</prix>
+                        <photo>../photo/desserts/gateauChocolat.jpg</photo>
+                        <listeIngredient>
+                            <ingredient>sucre</ingredient>
+                            <ingredient>farine</ingredient>
+                            <ingredient>oeufs</ingredient>
+                            <ingredient>chocolat</ingredient>
+                        </listeIngredient>
+                    </plat>
+                </listePlats>
+            </commande>
+        </listeCommandes>     
+    </client>  
+</clientele>

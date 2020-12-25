@@ -1,0 +1,163 @@
+<section *ngIf="isVide; then panierVide else panierNonVide"></section>
+  <ng-template #panierVide>
+    <h1>Votre panier est vide</h1>
+  </ng-template>
+  <ng-template #panierNonVide>
+    <table>
+      <tr>
+        <th>Mon panier</th>
+      </tr>
+
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <td>
+                Films
+              </td>
+              <td>
+                Prix
+              </td>
+              <td>
+                Quantité
+              </td>
+            </tr>
+            <tr *ngFor="let film of films">
+              <td>{{film.title}}</td>
+              <td>3.75 €</td>
+              <td>1</td>
+              <td><button (click)="deleteFilm(film.id)">Retirer du panier</button></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <table>
+            <tr>
+              <th>
+                Plats
+              </th>
+            </tr>
+            <tr *ngFor="let plat of plats">
+              <td>{{plat.nom}}</td>
+              <td>{{plat.prix | currency: 'EUR'}}</td>
+              <td>
+                <input type="number" min="0" value="1" [(ngModel)]="plat.quantite" (ngModelChange)="delIfZero(plat.nom, plat.quantite)" />
+                <button (click)="deletePlat(plat.nom)">Retirer du panier</button>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>Prix :</td>
+        <td>{{prixPanier | number: '1.2' | currency: 'EUR'}}</td>
+      </tr>
+    </table>
+    <br/>
+
+    <table>
+
+      <th>Choisissez l'adresse de la commande </th>
+      <tr>
+        <td>
+          <input name="adrPanierRadio" type="radio" value="cliAdr" id="domicile" [ngModel]="radioButtonChecking" [disabled]="!cliAdrIsDefined" (ngModelChange)="updateRBVal('cliAdr')">
+          <label for="domicile" required> Domicile </label><br/>
+        </td>
+        <td>
+          <span *ngIf="!cliAdrIsDefined"> Votre compte n'a pas d'adresse définie</span>
+          <span *ngIf="cliAdrIsDefined">{{domicileDisplay}}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input name="adrPanierRadio" type="radio" value="customAdr" id="custom" [ngModel]="radioButtonChecking" (ngModelChange)="updateRBVal('customAdr')">
+          <label for="custom" required> Saisissez une adresse </label><br/>
+        </td>
+
+        <td *ngIf="radioButtonChecking === 'customAdr'">
+          <form [formGroup]="adrFormGroup" >
+            <table>
+              <tr>
+                <td>Numéro de rue : </td>
+                <td><input formControlName="numero"/></td>
+              </tr>
+              <div *ngIf="hasValidationError('numero')">
+                <tr *ngIf="getValidationError('numero','required')">
+                  <td colspan="2">
+                    Veuillez saisir un numéro de rue !
+                  </td>
+                </tr>
+                <tr *ngIf="getValidationError('numero','pattern')">
+                  <td colspan="2">
+                    Veuillez saisir un numéro de rue valide !
+                  </td>
+                </tr>
+              </div>
+
+              <tr>
+                <td>Rue : </td>
+                <td><input formControlName="rue"/></td>
+              </tr>
+              <div *ngIf="hasValidationError('rue')">
+                <tr *ngIf="getValidationError('rue','required')">
+                  <td colspan="2">
+                    Veuillez saisir une rue !
+                  </td>
+                </tr>
+                <tr *ngIf="getValidationError('rue','maxlength')">
+                  <td colspan="2">
+                    La rue saisie est trop longue !
+                  </td>
+                </tr>
+              </div>
+
+
+              <tr>
+                <td>Code postal : </td>
+                <td><input formControlName="cp"/></td>
+              </tr>
+              <div *ngIf="hasValidationError('cp')">
+                <tr *ngIf="getValidationError('cp','required')">
+                  <td colspan="2">
+                    Veuillez saisir un code postal !
+                  </td>
+                </tr>
+                <tr *ngIf="getValidationError('cp','pattern')">
+                  <td colspan="2">
+                    Veuillez saisir un code postal valide !
+                  </td>
+                </tr>
+              </div>
+
+              <tr>
+                <td>Ville : </td>
+                <td><input formControlName="ville"/></td>
+              </tr>
+              <div *ngIf="hasValidationError('ville')">
+                <tr *ngIf="getValidationError('ville','required')">
+                  <td colspan="2">
+                    Veuillez saisir une ville !
+                  </td>
+                </tr>
+                <tr *ngIf="getValidationError('ville','maxlength')">
+                  <td colspan="2">
+                    Votre ville est trop longue !
+                  </td>
+                </tr>
+              </div>
+            </table>
+          </form>
+        </td>
+      </tr>
+    </table>
+    <br/>
+    <button (click)="videPanier()">Vider le panier</button>
+    <button [disabled]="!peutCommander" (click)="passerCommande()">Passer ma commande</button>
+    <span *ngIf="!peutCommanderFilmPlat"><br/>Vous devez choisir au moins 1 film ET 1 plat pour passer commande !</span>
+    <span *ngIf="!peutPasserCommandeInfosClient"><br/>Vous devez renseignez vos informations manquantes dans l'espace mon compte pour passer commande !</span>
+    <br/>
+
+  </ng-template>

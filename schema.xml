@@ -1,0 +1,68 @@
+<?xml version = ’1.0’ encoding = ’ UTF -8 ’ ? >
+ <schema>
+   <simpletype  name = " client ">
+	   <sequence>
+		     <element name="id" type="String"/>
+		     <element name="nom" type="String"/>
+         <element name="prenom" type="string"/>
+         <element name="photo" type="String"/>
+         <element name="email" type ="String"/>
+         <element name="tel" type="string"/>
+         <element name="adresse" type ="String"/>
+     </sequence>
+  </simpletype>
+  <completype  name = " Commande ">
+    <element name="id" type="String"/>
+    <element name="date" type="String"/>
+    <element name="idClient" type="String"/>
+    <element name ="idPlats" type="list"/>
+    <element name="idFilms" type="list"/>
+    <element name="prix" type="double"/>
+    <element name="adresseLivraison" type="String"/>
+  </completype>
+  <simpletype name="list">
+    <restruction base="String"/>
+  </simpletype>
+  <completype name="Carte">
+    <sequence>
+      <element name ="1" type="plat"/>
+      <element name ="plats" type="list"/>
+    </sequence>
+    <completype name="plat">
+      <sequence>
+        <element name ="min" type ="plat"/>
+        <element name ="max" type="plat"/>
+      </sequence>
+    </complexetype>
+  </complexetype>
+  <simpletype name="plat">
+    <restruction base="int">
+      <minoccurs value="1"/>
+      <maxoccurs value=unbounded/>
+    </restruction>
+  </simpletype>
+  <completype name="plat">
+    <sequence>
+      <element name="id" type="string"/>
+      <element name="type" type="TypeDePlat"/>
+      <element name="prix" type="double"/>
+      <element name="photo" type="String"/>
+      <element name="ingredients" type="list"/>
+    </sequence>
+  </complextype>
+  <simpletype name="TypeDePlat">
+    <restruction name="String">
+      <enumeration value="Entree"/>
+      <enumeration value="Plat"/>
+      <enumeration value="Dessert"/>
+      <enumeration value="Boisson"/>
+    </restruction>
+  </simpletype>
+  <simpletype name="list">
+    <restruction name="String">
+      <enumeration value="Tomate"/>
+      <enumeration value="Mozzarella"/>
+      <enumeration value="......"/>
+    </restruction>
+  </simpletype>
+ </schema>

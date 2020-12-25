@@ -1,0 +1,40 @@
+<h1>La Carte ! </h1>
+<section *ngIf="carte !== undefined">
+  <table border="1">
+    <tr>
+      <td colspan="2">Plat : </td>
+      <td>Prix :</td>
+    </tr>
+    <ng-container *ngFor="let plat of plats">
+      <tr (click)="hideIngredients($event, plat.nom)">
+        <td>
+          <img width="100px" src="{{plat.photo}}" alt="" />
+        </td>
+        <td>
+          {{plat.nom}}
+        </td>
+        <td>
+          {{plat.prix | currency:'EUR'}}
+        </td>
+        <td>
+          Quantité : <input type="number" min="1" [(ngModel)]="plat.quantite" />
+          <button (click)="ajouterAuPanier(plat)">Ajouter au panier</button>
+        </td>
+      </tr>
+      <tr *ngIf="hideme[plat.nom]">
+        <td colspan="3">
+          <table>
+            <th>Ingrédients</th>
+            <tr *ngFor="let ingredient of plat.ingredients">
+              <td>
+                {{ingredient}}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </ng-container>
+
+  </table>
+</section>
+

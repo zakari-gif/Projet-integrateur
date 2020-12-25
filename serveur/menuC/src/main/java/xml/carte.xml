@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<carte
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://l3-miage/projetIntegrateur'
+    xsi:schemaLocation='http://l3-miage/projetIntegrateur schemaCarte.xsd'>
+    <listePlats>
+        <plat nomPlat = "coca cola">
+            <typePlat>boisson</typePlat>
+            <prix>2.20</prix>
+            <photo>../../assets/boissons/cocaCola.jpg</photo>
+            <listeIngredient>
+                <ingredient>eau</ingredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>additif</ingredient>
+                <ingredient>conservateur</ingredient>
+                <ingredient>feuille de coca</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "ice tea">
+            <typePlat>boisson</typePlat>
+            <prix>2.20</prix>
+            <photo>../../assets/boissons/iceTea.jpg</photo>
+            <listeIngredient>
+                <ingredient>eau</ingredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>additif</ingredient>
+                <ingredient>conservateur</ingredient>
+                <ingredient>pêche</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "limonade">
+            <typePlat>boisson</typePlat>
+            <prix>2.20</prix>
+            <photo>../../assets/boissons/limonade.jpg</photo>
+            <listeIngredient>
+                <ingredient>eau</ingredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>additif</ingredient>
+                <ingredient>conservateur</ingredient>
+                <ingredient>citron</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "salade à la mozzarella">
+            <typePlat>entrée</typePlat>
+            <prix>1.50</prix>
+            <photo>../../assets/entrees/saladeMozzarella.jpg</photo>
+            <listeIngredient>
+                <ingredient>salade</ingredient>
+                <ingredient>mozzarella</ingredient>
+                <ingredient>tomate</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "salade au bleu">
+            <typePlat>entrée</typePlat>
+            <prix>1.50</prix>
+            <photo>../../assets/entrees/saladeBleu.jpg</photo>
+            <listeIngredient>
+                <ingredient>salade</ingredient>
+                <ingredient>bleu</ingredient>
+                <ingredient>tomate</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "pizza aux anchois">
+            <typePlat>plat principal</typePlat>
+            <prix>3.20</prix>
+            <photo>../../assets/plats/pizzaAnchois.jpg</photo>
+            <listeIngredient>
+                <ingredient>tomate</ingredient>
+                <ingredient>anchois</ingredient>
+                <ingredient>mozzarella</ingredient>
+                <ingredient>piment</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "pizza aux saumon">
+            <typePlat>plat principal</typePlat>
+            <prix>3.20</prix>
+            <photo>../../assets/plats/pizzaSaumon.jpg</photo>
+            <listeIngredient>
+                <ingredient>gruyère</ingredient>
+                <ingredient>saumon</ingredient>
+                <ingredient>tomate</ingredient>
+                <ingredient>huile d'olive</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "pizza aux champignons">
+            <typePlat>plat principal</typePlat>
+            <prix>3.20</prix>
+            <photo>../../assets/plats/pizzaChampignons.jpg</photo>
+            <listeIngredient>
+                <ingredient>gruyère</ingredient>
+                <ingredient>tomate</ingredient>
+                <ingredient>champignon</ingredient>
+                <ingredient>olive</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "hamburger mini">
+            <typePlat>plat principal</typePlat>
+            <prix>2.50</prix>
+            <photo>../../assets/plats/hamburgerMini.jpg</photo>
+            <listeIngredient>
+                <ingredient>pain</ingredient>
+                <ingredient>steack haché</ingredient>
+                <ingredient>salade</ingredient>
+                <ingredient>tomate</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "hamburger maxi">
+            <typePlat>plat principal</typePlat>
+            <prix>4.50</prix>
+            <photo>../../assets/plats/hamburgerMaxi.jpg</photo>
+            <listeIngredient>
+                <ingredient>pain</ingredient>
+                <ingredient>steack haché</ingredient>
+                <ingredient>salade</ingredient>
+                <ingredient>tomate</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "tacos">
+            <typePlat>plat principal</typePlat>
+            <prix>3.00</prix>
+            <photo>../../assets/plats/tacos.jpg</photo>
+            <listeIngredient>
+                <ingredient>pain</ingredient>
+                <ingredient>steack haché</ingredient>
+                <ingredient>oignon</ingredient>
+                <ingredient>tomate</ingredient>
+                <ingredient>frite</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "sushi">
+            <typePlat>plat principal</typePlat>
+            <prix>3.00</prix>
+            <photo>../../assets/plats/sushi.jpg</photo>
+            <listeIngredient>
+                <ingredient>riz</ingredient>
+                <ingredient>saumon</ingredient>
+                <ingredient>salade</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat ="tiramisu">
+            <typePlat>dessert</typePlat>
+            <prix>3.20</prix>
+            <photo>../../assets/desserts/tiramisu.jpg</photo>
+            <listeIngredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>lait</ingredient>
+                <ingredient>café</ingredient>
+                <ingredient>crème</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat ="crème brûlée">
+            <typePlat>dessert</typePlat>
+            <prix>3.00</prix>
+            <photo>../../assets/desserts/cremeBrulee.jpg</photo>
+            <listeIngredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>lait</ingredient>
+                <ingredient>oeufs</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "gâteau au chocolat">
+            <typePlat>dessert</typePlat>
+            <prix>3.20</prix>
+            <photo>../../assets/desserts/gateauChocolat.jpg</photo>
+            <listeIngredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>farine</ingredient>
+                <ingredient>oeufs</ingredient>
+                <ingredient>chocolat</ingredient>
+            </listeIngredient>
+        </plat>
+        <plat nomPlat = "glace au citron">
+            <typePlat>dessert</typePlat>
+            <prix>2.20</prix>
+            <photo>../../assets/desserts/glaceCitron.jpg</photo>
+            <listeIngredient>
+                <ingredient>sucre</ingredient>
+                <ingredient>eau</ingredient>
+                <ingredient>citron</ingredient>
+            </listeIngredient>
+        </plat>
+    </listePlats>
+</carte>

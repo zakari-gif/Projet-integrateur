@@ -1,0 +1,76 @@
+<section *ngIf="film !== undefined">
+  <div class="row">
+    <div class="col-4">
+      <img src="https://image.tmdb.org/t/p/w500{{film.poster_path}}" width="100%" style="border: black 2px solid;">
+    </div>
+    <div class="col-8">
+      <h2>{{film.title}}</h2>
+      <h3>{{film.tagline}}</h3>
+
+      <br/>
+
+      <table>
+        <tr>
+          <td style="font-weight: bold;">
+            Durée :
+          </td>
+          <td>
+            {{runtime}}
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">
+            Note :
+          </td>
+          <td>
+            {{film.vote_average}}/10 ({{film.vote_count}} votes)
+          </td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">
+            Sorti le :
+          </td>
+          <td>
+            {{film.release_date | date:'dd/MM/yyyy'}}
+          </td>
+        </tr>
+      </table>
+
+      <br/>
+
+      <h4>Synopsis :</h4>
+      <p align="justify"> 
+        {{film.overview}}
+      </p>
+
+      <br/>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <p style="font-weight: bold;">Genres :</p>
+            <span *ngFor="let genre of film.genres">
+              {{genre.name}}<br/>
+            </span>
+          </div>
+          <div class="col-4">
+            <p style="font-weight: bold;">Pays de production :</p>
+            <span *ngFor="let productionCountry of film.production_countries">
+              {{productionCountry.name}}<br/>
+            </span>
+          </div>
+          <div class="col-4">
+            <p style="font-weight: bold;">Société(s) de production :</p>
+            <span *ngFor="let productionCompany of film.production_companies">
+              {{productionCompany.name}}<br/>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <br/>
+
+      <button (click)="ajouterAuPanier()" class="btn btn-info" style="width: 50%;">Ajouter au panier</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           targetNamespace="http://l3-miage/projetIntegrateur"
+           xmlns:pla="http://l3-miage/projetIntegrateur"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:include schemaLocation = "schemaPlats.xsd"/>
+    <xs:include schemaLocation = "schemaAdresse.xsd"/>
+    
+    <xs:complexType name = "Commande">
+        <xs:sequence>
+            <xs:element name = "dateCommande" type = "xs:date"/>
+            <xs:element name = "prixCommande" type = "pla:Prix"/>
+            <xs:element name = "noAdrLivraison" type = "pla:NoAdresse"/>
+            <xs:element name = "rueAdrLivraison" type = "xs:string"/>
+            <xs:element name = "cpAdrLivraison" type = "pla:CodePostal"/>
+            <xs:element name = "villeAdrLivraison" type = "xs:string"/>
+            <xs:element name = "listePlats" type = "pla:ListePlats">
+                <xs:key name = "idPlat">
+                    <xs:selector xpath="pla:plat"/>
+                    <xs:field xpath = "@idPlat"/>
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name = "idCommande" type = "xs:int"/>
+    </xs:complexType>
+   
+
+</xs:schema>

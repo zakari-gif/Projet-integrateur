@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           targetNamespace="http://l3-miage/projetIntegrateur"
+           xmlns:pla="http://l3-miage/projetIntegrateur"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:include schemaLocation = "schemaCommande.xsd"/>
+    <xs:include schemaLocation = "schemaAdresse.xsd"/>
+    
+    
+    <xs:element name = "clientele" type = "pla:Clientele">
+        <xs:key name = "keyClient">
+            <xs:selector xpath = "pla:client"/>
+            <xs:field xpath = "@idClient"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:complexType name = "Clientele">
+        <xs:sequence>
+            <xs:element name = "client" type = "pla:Client" maxOccurs = "unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name = "Client">
+        <xs:sequence>
+            <xs:element name = "nomClient" type = "xs:string"/>
+            <xs:element name = "prenomClient" type = "xs:string"/>
+            <xs:element name = "photoClient" type = "xs:string"/>
+            <xs:element name = "emailClient" type = "xs:string"/>
+            <xs:element name = "telClient" type = "pla:Telephone"/>
+            <xs:element name = "noAdrClient" type = "pla:NoAdresse"/>
+            <xs:element name = "rueAdrClient" type = "xs:string"/> 
+            <xs:element name = "cpAdrClient" type = "pla:CodePostal"/>
+            <xs:element name = "villeAdrClient" type = "xs:string"/>
+            <xs:element name = "listeCommandes" type = "pla:ListeCommandes">
+                <xs:key name = "keyCommande">
+                    <xs:selector xpath="pla:commande"/>
+                    <xs:field xpath = "@idCommande"/>
+                </xs:key>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name = "idClient" type = "xs:string"/>
+    </xs:complexType>
+    
+    <xs:complexType name = "ListeCommandes">
+        <xs:sequence>
+            <xs:element name = "commande" type = "pla:Commande" minOccurs = "0" maxOccurs = "unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name = "Telephone">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value = "((\+)33|0)[1-9](\d{2}){4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

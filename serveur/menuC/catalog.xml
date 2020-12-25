@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Users/JDufo/Desktop/projet-integrateur-l3m-2020/serveur/menuC/src/main/java/xml/schemaClient.xsd" uri="src/main/resources/jaxb/Test2BindingClient/schemaClient.xsd"/>
+    <system systemId="file:/C:/Users/JDufo/Desktop/projet-integrateur-l3m-2020/serveur/menuC/src/main/java/xml/schemaCommande.xsd" uri="src/main/resources/jaxb/Test2BindingClient/schemaCommande.xsd"/>
+    <system systemId="file:/C:/Users/JDufo/Desktop/projet-integrateur-l3m-2020/serveur/menuC/src/main/java/xml/schemaAdresse.xsd" uri="src/main/resources/jaxb/Test2BindingClient/schemaAdresse.xsd"/>
+    <system systemId="file:/C:/Users/JDufo/Desktop/projet-integrateur-l3m-2020/serveur/menuC/src/main/java/xml/schemaPlats.xsd" uri="src/main/resources/jaxb/Test2BindingClient/schemaPlats.xsd"/>
+</catalog>

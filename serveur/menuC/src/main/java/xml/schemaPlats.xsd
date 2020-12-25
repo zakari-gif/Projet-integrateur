@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema version="1.0"
+           targetNamespace="http://l3-miage/projetIntegrateur"
+           xmlns:pla="http://l3-miage/projetIntegrateur"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    
+    <xs:complexType name = "ListePlats">
+        <xs:sequence>
+            <xs:element name = "plat" type = "pla:Plat" maxOccurs = "unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- la quantité ne concerne que les commandes (si un même plat est commandé plusieurs fois)
+         elle est facultative, car lorsque le plat est référencé dans une carte, la quantité n'a
+         pas de sens
+    -->
+    
+    <xs:complexType name = "Plat">
+        <xs:sequence>
+            <xs:element name = "typePlat" type = "pla:TypeDePlat"/>
+            <xs:element name = "prix" type = "pla:Prix"/>
+            <xs:element name = "photo" type = "xs:string"/>
+            <xs:element name = "quantite" type = "pla:Quantite" minOccurs = "0"/>
+            <xs:element name = "listeIngredient" type = "pla:ListeIngredients" maxOccurs = "1"/>
+        </xs:sequence> 
+        <xs:attribute name = "nomPlat" type = "xs:string"/>    
+    </xs:complexType>
+    
+    <xs:complexType name = "ListeIngredients">
+        <xs:sequence>
+            <xs:element name = "ingredient" type = "pla:Ingredient" maxOccurs = "unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name = "TypeDePlat">
+        <xs:restriction base = "xs:string">
+            <xs:enumeration value = "boisson"/>
+            <xs:enumeration value = "entrée"/>
+            <xs:enumeration value = "plat principal"/>
+            <xs:enumeration value = "dessert"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name = "Ingredient">
+        <xs:restriction base = "xs:string">
+            <xs:enumeration value = "eau"/>
+            <xs:enumeration value = "conservateur"/>
+            <xs:enumeration value = "additif"/>
+            <xs:enumeration value = "sucre"/>
+            <xs:enumeration value = "citron"/>
+            <xs:enumeration value = "orange"/>
+            <xs:enumeration value = "peche"/>
+            <xs:enumeration value = "feuille de coca"/>
+            <xs:enumeration value = "menthe"/>
+            <xs:enumeration value = "mozzarella"/>
+            <xs:enumeration value = "bleu"/>
+            <xs:enumeration value = "camembert"/>
+            <xs:enumeration value = "gruyere"/>
+            <xs:enumeration value = "tomate"/>
+            <xs:enumeration value = "oignon"/>
+            <xs:enumeration value = "moutarde de Dijon"/>
+            <xs:enumeration value = "pain"/>
+            <xs:enumeration value = "frite"/>
+            <xs:enumeration value = "riz"/>
+            <xs:enumeration value = "carotte"/>
+            <xs:enumeration value = "salade"/>
+            <xs:enumeration value = "champignon"/>
+            <xs:enumeration value = "olive"/>
+            <xs:enumeration value = "piment"/>
+            <xs:enumeration value = "sauce soja"/>
+            <xs:enumeration value = "sauce BBQ"/>
+            <xs:enumeration value = "huile d'olive"/>
+            <xs:enumeration value = "steack hache"/>
+            <xs:enumeration value = "poulet"/>
+            <xs:enumeration value = "anchois"/>
+            <xs:enumeration value = "saumon"/>
+            <xs:enumeration value = "truite"/>
+            <xs:enumeration value = "chocolat"/>
+            <xs:enumeration value = "farine"/>
+            <xs:enumeration value = "vanille"/>
+            <xs:enumeration value = "noisette"/>
+            <xs:enumeration value = "oeufs"/>
+            <xs:enumeration value = "lait"/>
+            <xs:enumeration value = "café"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name = "Prix">
+        <xs:restriction base = "xs:float">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name = "Quantite">
+        <xs:restriction base = "xs:int">
+            <xs:minInclusive value = "1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

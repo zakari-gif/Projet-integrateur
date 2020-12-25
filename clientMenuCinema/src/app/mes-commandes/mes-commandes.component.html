@@ -1,0 +1,54 @@
+<section *ngIf="commandes.length === 0; then noCom else listeCom"></section>
+<ng-template #noCom>
+  Vous n'avez aucune commande !
+</ng-template>
+<ng-template #listeCom>
+  <table border="1">
+    <tr>
+      <td>
+        Date :
+      </td>
+      <td>
+        Adresse de livraison :
+      </td>
+      <td>
+        Prix :
+      </td>
+    </tr>
+
+    <ng-container *ngFor="let com of commandes">
+      <tr (click)="hideMe[com.id] = !hideMe[com.id]">
+        <td>
+          {{com.date}}
+        </td>
+        <td>
+          {{com.adresse.numero}} {{com.adresse.rue}}, {{com.adresse.cp}} - {{com.adresse.ville}}
+        </td>
+        <td>
+          {{com.prix | currency:'EUR'}}
+        </td>
+      </tr>
+      <tr *ngIf="hideMe[com.id]">
+        <td>
+          Vos films :
+          <ul>
+            <li *ngFor="let film of filmsCom[com.id]">
+              <a routerLink="/film/{{film.id}}">{{film.title}}</a> ({{3.75 | currency:'EUR'}})
+            </li>
+          </ul>
+          Prix des films : {{com.films.length*3.75 | currency:'EUR'}}
+        </td>
+        <td>
+          Vos plats : <br/>
+          <ul>
+            <li *ngFor="let plat of com.plats">
+              {{plat.nom}}({{plat.prix | currency:'EUR'}}) x{{plat.quantite}} = {{plat.prix*plat.quantite | currency:'EUR'}}
+            </li>
+          </ul>
+          Prix des plats : {{prixTotalPlatsCom(com.id) | currency:'EUR'}}
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+</ng-template>
+

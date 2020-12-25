@@ -1,0 +1,12 @@
+<table class="container">
+  <tr (click)="goDetail($event)" class="row" style="margin-bottom: 20px; padding: 10px; background-color: rgb(240, 245, 247); border-radius: 10px; border: rgb(191, 195, 197) 1px solid; cursor: pointer">
+    <td class="col-md-2 col-sm-4">
+      <img src="https://image.tmdb.org/t/p/w500{{film.poster_path}}" width="85px" style="border: black 1px solid"/>
+    </td>
+    <td class="col-md-10 col-sm-6" style="vertical-align: middle;">
+      <h3>{{film.title}}</h3>
+      <p>Note : {{film.vote_average}}/10 ({{film.vote_count}} votes)</p>
+      <button (click)="ajouterAuPanier()" class="btn btn-info">Ajouter au panier</button>
+    </td>
+  </tr>
+</table>

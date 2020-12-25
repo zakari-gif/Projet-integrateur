@@ -1,0 +1,25 @@
+<section *ngIf="films !== undefined">
+  <form (ngSubmit)="search()">
+    <input type="search" id="search" placeholder="Rechercher un film..." [(ngModel)]="query" [ngModelOptions]="{standalone: true}" style="margin-right: 15px;"/>
+    <button (click)="search()" class="btn btn-info">Rechercher</button>
+    <button *ngIf="!isDiscover" (click)="clearSearch()" class="btn btn-danger">Annuler la recherche</button>
+  </form>
+
+  <section *ngIf="haveResults(); then afficheListe else noResult"></section>
+
+  <ng-template #afficheListe>
+    <p>
+      (Page :
+      <input type="number" [(ngModel)]="nbPage" (ngModelChange)="changePage()" [min]="1" [max]="listeFilms.total_pages" style="width: 50px;"/>
+      /{{listeFilms.total_pages}})
+    </p>
+    <div *ngFor="let film of films">
+      <app-affiche-film [film]="film"></app-affiche-film>
+    </div>
+  </ng-template>
+
+  <ng-template #noResult>
+    <br/>
+    <h2>Aucun résultat ne correspond à votre recherche.</h2>
+  </ng-template>
+</section>

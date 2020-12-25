@@ -1,0 +1,164 @@
+<form [formGroup]="updateCliForm" (ngSubmit)="onSubmit(updateCliForm.value)">
+  <h1>Modifier mes informations personnelles</h1>
+  <br/>
+  <h3>Informations générales :</h3>
+  <table>
+    <tr>
+      <td style="text-align: right;">
+        <label for="nom">Nom : </label>
+      </td>
+      <td>
+        <input id="nom" formControlName="nom" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('nom')">
+        <div *ngIf="getValidationError('nom', 'required')">
+          Veuillez saisir un nom
+        </div>
+        <div *ngIf="getValidationError('nom', 'minlength')">
+          Le nom est trop court
+        </div>
+        <div *ngIf="getValidationError('nom','maxlength')">
+          Le nom est trop grand
+        </div>
+        <div *ngIf="getValidationError('nom','pattern')">
+          Saisissez un nom valide
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="prenom">Prénom : </label>
+      </td>
+      <td>
+        <input id="prenom" formControlName="prenom" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('prenom')">
+        <div *ngIf="getValidationError('prenom', 'required')">
+          Veuillez saisir un prénom
+        </div>
+        <div *ngIf="getValidationError('prenom', 'minlength')">
+          Le prénom est trop court
+        </div>
+        <div *ngIf="getValidationError('prenom','maxlength')">
+          Le prénom est trop grand
+        </div>
+        <div *ngIf="getValidationError('prenom','pattern')">
+          Saisissez un prenom valide
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="mail">Adresse email : </label>
+      </td>
+      <td>
+        <input id="mail" formControlName="mail" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('mail')">
+        <div *ngIf="getValidationError('mail', 'required')">
+          Veuillez saisir une adresse email
+        </div>
+        <div *ngIf="getValidationError('mail', 'email')">
+          Veuillez saisir une adresse email valide
+        </div>
+        <div *ngIf="getValidationError('prenom','maxlength')">
+          L'adresse email est trop longue
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="tel">Téléphone : </label>
+      </td>
+      <td>
+        <input id="tel" type="email" formControlName="tel" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('tel')">
+        <div *ngIf="getValidationError('tel', 'required')">
+          Veuillez saisir un numéro de téléphone
+        </div>
+        <div *ngIf="getValidationError('tel', 'pattern')">
+          Veuillez saisir un numéro de téléphone valide
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <br/>
+  
+  <h3>Adresse :</h3>
+  <table>
+    <tr>
+      <td style="text-align: right;">
+        <label for="numero">Numéro de rue : </label>
+      </td>
+      <td>
+        <input id="numero" formControlName="numero" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('numero')">
+        <div *ngIf="getValidationError('numero', 'required')">
+          Veuillez saisir un numéro de rue
+        </div>
+        <div *ngIf="getValidationError('numero', 'pattern')">
+          Veuillez saisir un numéro de rue valide
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="rue">Rue : </label>
+      </td>
+      <td>
+        <input id="rue" formControlName="rue" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('rue')">
+        <div *ngIf="getValidationError('rue', 'required')">
+          Veuillez saisir un nom de rue
+        </div>
+        <div *ngIf="getValidationError('rue', 'maxlength')">
+          Le nom de la rue est trop grand
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="cp">Code Postal : </label>
+      </td>
+      <td>
+        <input id="cp" formControlName="cp" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('cp')">
+        <div *ngIf="getValidationError('cp', 'required')">
+          Veuillez saisir un code postal
+        </div>
+        <div *ngIf="getValidationError('cp', 'pattern')">
+          Veuillez saisir un code postal valide
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="text-align: right;">
+        <label for="ville">Ville : </label>
+      </td>
+      <td>
+        <input id="ville" formControlName="ville" class="form-control"/>
+      </td>
+      <td *ngIf="hasValidationError('tel')">
+        <div *ngIf="getValidationError('tel', 'required')">
+          Veuillez saisir une ville
+        </div>
+        <div *ngIf="getValidationError('tel', 'maxlength')">
+          Le nom de la ville saisie est trop long
+        </div>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <input type="submit" class="btn btn-info" value="Confirmer"/>
+</form>
